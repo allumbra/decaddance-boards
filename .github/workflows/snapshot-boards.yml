@@ -1,6 +1,6 @@
 name: Snapshot boards
 
-# Every 15 minutes: read Decaddance's daily boards from PlayFab and publish them as static
+# Every 15 minutes (at :07, :22, :37, :52: GitHub drops or delays runs queued on the busy :00/:15 marks): read Decaddance's daily boards from PlayFab and publish them as static
 # JSON on GitHub Pages (https://allumbra.github.io/decaddance-boards/), so the app can show
 # them to a signed-out player with no login. The files are deployed as a Pages artifact and
 # never committed, so only the current snapshot is public.
@@ -10,7 +10,7 @@ name: Snapshot boards
 # nothing here runs on pull_request.
 on:
   schedule:
-    - cron: '*/15 * * * *'
+    - cron: '7,22,37,52 * * * *'
   workflow_dispatch:
 
 permissions:
