@@ -17,7 +17,8 @@ starts, so tomorrow's files exist already (daily boards empty, lifetime unchange
 first 15 minutes of a day never show an error.
 Each entry is {rank, playerAlias, score}: nothing else leaves this script (no PlayFab
 id, tag or display name). Names come from board_alias.py, the same rule as the signed-in
-board. A player who turns the handle off or deletes the account drops out on the next run.
+board. A player who turns the handle off or deletes the account drops out on the next successful
+run; GitHub runs the schedule hours apart, so that can take a day or more.
 
 The title key comes from the PLAYFAB_SECRET_KEY environment variable (or --secret-file)
 and is never printed. Any API failure other than "that version is gone" fails the run,
